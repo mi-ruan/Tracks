@@ -1,0 +1,19 @@
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <%= error %>
+  <% end %>
+<% end %>
+
+<form action="/tracks" method="POST">
+  <label>Name
+    <input type="text" name="track[name]" value="<%=@track.name%>">
+  </label>
+  <label>Artist
+    <input type="text" name="track[artist]" value="<%=@track.artist%>">
+  </label>
+  <label>Album
+    <input type="text" name="track[album]" value="<%=@track.album%>">
+  </label>
+
+  <input type="submit">
+</form>

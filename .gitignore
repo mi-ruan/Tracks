@@ -1,0 +1,12 @@
+c
+flash['abc']
+flash.now
+c
+@now
+@now['abc'] ='xyz'
+@flash_cookie
+@now
+c
+@now
+c
+@now

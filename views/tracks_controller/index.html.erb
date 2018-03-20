@@ -1,0 +1,21 @@
+<h1>All the Tracks</h1>
+
+<% if flash[:notice] %>
+  Notice: <%= flash[:notice] %>
+<% end %>
+
+<table>
+  <tr>
+    <th>Track Name </th>
+    <th>Track Artist</th>
+    <th>Track Album</th>
+  </tr>
+<% @tracks.each do |track| %>
+  <tr>
+    <td><%= track.name.to_s %></td>
+    <td><%= track.artist.to_s %></td>
+    <td><%= track.album.to_s %></td>
+  </tr>
+<% end %>
+<table>
+<a href="/tracks/new">New Track!</a>
