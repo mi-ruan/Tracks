@@ -8,7 +8,7 @@ class Flash
     @req = req
     @flash_cookie = {}
     @now = {}
-    cookie = req.cookies['_rails_lite_app_flash']
+    cookie = req.cookies['_tracks_app_flash']
     if cookie
       @now = JSON.parse(cookie)
       @flash_cookie = JSON.parse(cookie)
@@ -26,7 +26,7 @@ class Flash
 
   def store_flash(res)
     return_cookie = (@flash_cookie.to_a - @now.to_a).to_h
-    res.set_cookie('_rails_lite_app_flash',
+    res.set_cookie('_tracks_app_flash',
     {:path => '/', :value => return_cookie.to_json})
   end
 
